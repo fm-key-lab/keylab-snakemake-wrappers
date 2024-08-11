@@ -1,0 +1,59 @@
+
+rule all:  # [hide]
+    input:  # [hide]
+        "results/multiqc/broadPeak/multiqc_report.html",  # [hide]
+
+
+rule get_genome:  # [hide]
+    output:  # [hide]
+        "data/genome.fasta",  # [hide]
+    conda:  # [hide]
+        "envs/curl.yaml"  # [hide]
+    log:  # [hide]
+        "logs/get-genome.log",  # [hide]
+    shell:  # [hide]
+        "curl -L https://raw.githubusercontent.com/nf-core/test-datasets/atacseq/reference/genome.fa > {output} 2> {log}"  # [hide]
+
+
+rule get_annotation:  # [hide]
+    output:  # [hide]
+        "data/genome.gtf",  # [hide]
+    conda:  # [hide]
+        "envs/curl.yaml"  # [hide]
+    log:  # [hide]
+        "logs/get-annotation.log",  # [hide]
+    shell:  # [hide]
+        "curl -L https://raw.githubusercontent.com/nf-core/test-datasets/atacseq/reference/genes.gtf > {output} 2> {log}"  # [hide]
+
+
+rule get_design:  # [hide]
+    output:  # [hide]
+        "design.csv",  # [hide]
+    conda:  # [hide]
+        "envs/curl.yaml"  # [hide]
+    log:  # [hide]
+        "logs/get-design.log",  # [hide]
+    shell:  # [hide]
+        "curl -L https://raw.githubusercontent.com/nf-core/test-datasets/chipseq/samplesheet/v2.0/samplesheet_test.csv > {output} 2> {log}"  # [hide]
+
+
+rule chipseq_pipeline:
+    input:
+        input="design.csv",
+        fasta="data/genome.fasta",
+        gtf="data/genome.gtf",
+        # any --<argname> pipeline file arguments can be given here as <argname>=<path>
+    output:
+        "results/multiqc/broadPeak/multiqc_report.html",
+    params:
+        pipeline="nf-core/chipseq",
+        revision="2.0.0",
+        profile=["test", "docker"],
+        # The chosen pipeline expects an --outdir to be given.
+        # We infer this from the output file path. Since that file path can be changed
+        # e.g. in case of cloud storage, we use a lambda function to infer the outdir.
+        outdir=lambda wildcards, output: str(Path(output[0]).parents[-2]),
+        # any --<argname> pipeline arguments can be given here as <argname>=<value>
+    handover: True
+    wrapper:
+        "master/bio/nf-core"

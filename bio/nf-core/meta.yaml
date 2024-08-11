@@ -1,0 +1,6 @@
+name: nf-core
+description: Run nf-core pipelines
+authors:
+  - Thomas Silvers
+notes: |
+  Wrapper for `nf-core <https://nf-co.re>`_ pipelines.
