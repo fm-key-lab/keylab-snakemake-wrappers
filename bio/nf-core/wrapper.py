@@ -55,4 +55,4 @@ log = snakemake.log_fmt_shell(stdout=False, stderr=True)
 args = " ".join(args)
 pipeline = snakemake.params.pipeline
 
-shell("nextflow {nxf} run nf-core/{pipeline} {args} {extra} {log}")
+shell("nextflow run nf-core/{pipeline} {nxf} {args} {extra} {log}")
