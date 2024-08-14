@@ -1,6 +1,6 @@
-__author__ = "Johannes Köster"
-__copyright__ = "Copyright 2021, Johannes Köster"
-__email__ = "johannes.koester@uni-due.de"
+__author__ = "Thomas Silvers"
+__copyright__ = "Copyright 2024, Thomas Silvers"
+__email__ = "silvers@mpiib-berlin.mpg.de"
 __license__ = "MIT"
 
 import os
