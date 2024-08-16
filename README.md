@@ -2,7 +2,7 @@
 [![GitHub actions status](https://github.com/snakemake/snakemake-wrappers/workflows/Tests/badge.svg?branch=master)](https://github.com/snakemake/snakemake-wrappers/actions?query=branch%3Amaster+workflow%3ATests)
 
 
-# The Snakemake Wrapper Repository
+# Key Lab Snakemake Wrapper Repository
 
 The Snakemake Wrapper Repository is a collection of reusable wrappers that allow to quickly use popular command line tools
 from [Snakemake](https://snakemake.readthedocs.io) rules and workflows.
