@@ -1,0 +1,12 @@
+wrappers:
+  - bio/cutadapt/pe
+  - bio/sickle/pe
+  # - bio/bowtie2/build
+  - bio/bowtie2/align
+  - bio/picard/addorreplacereadgroups
+  - bio/picard/markduplicates
+  - bio/samtools/index
+  - bio/bcftools/mpileup
+  - bio/bcftools/call
+  - bio/bcftools/view
+  - bio/tabix/index
