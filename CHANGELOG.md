@@ -1,5 +1,63 @@
 # Changelog
 
+## [4.3.0](https://www.github.com/snakemake/snakemake-wrappers/compare/v4.2.0...v4.3.0) (2024-08-28)
+
+
+### Features
+
+* add support for multiple input file subcommands in seqkit wrapper (subcommands "common" and "concat") ([#3142](https://www.github.com/snakemake/snakemake-wrappers/issues/3142)) ([3b5391f](https://www.github.com/snakemake/snakemake-wrappers/commit/3b5391f619b38334829c06b8bd0526a16e19c732))
+* Deeptools multibigwig summary ([#3135](https://www.github.com/snakemake/snakemake-wrappers/issues/3135)) ([df7e2bf](https://www.github.com/snakemake/snakemake-wrappers/commit/df7e2bffdd61690e56380bb1b49ca663e58a477c))
+* Deeptools plot correlation ([#3137](https://www.github.com/snakemake/snakemake-wrappers/issues/3137)) ([a965bd6](https://www.github.com/snakemake/snakemake-wrappers/commit/a965bd62f13bb62722daf08201a00b1f26bef38d))
+* Deeptools plot pca ([#3138](https://www.github.com/snakemake/snakemake-wrappers/issues/3138)) ([0d9862b](https://www.github.com/snakemake/snakemake-wrappers/commit/0d9862b0f91e74bb90993eb7ecb938dec80d779b))
+* Rseqc bamstat ([#3139](https://www.github.com/snakemake/snakemake-wrappers/issues/3139)) ([b4267e6](https://www.github.com/snakemake/snakemake-wrappers/commit/b4267e6a0244071a96efc8a91fd6ba982a738cb5))
+* Rseqc inner distance ([#3140](https://www.github.com/snakemake/snakemake-wrappers/issues/3140)) ([8ca10f3](https://www.github.com/snakemake/snakemake-wrappers/commit/8ca10f3949ca6fb1ed9f9d046c89ca10a7c32c8c))
+
+## [4.2.0](https://www.github.com/snakemake/snakemake-wrappers/compare/v4.1.1...v4.2.0) (2024-08-23)
+
+
+### Features
+
+* Pcaexplorer pcaplot ([#1728](https://www.github.com/snakemake/snakemake-wrappers/issues/1728)) ([8563e88](https://www.github.com/snakemake/snakemake-wrappers/commit/8563e882e61ddad7db6386f65803d13a6c1926af))
+
+
+### Performance Improvements
+
+* autobump bio/bbtools ([#3127](https://www.github.com/snakemake/snakemake-wrappers/issues/3127)) ([a9bd6df](https://www.github.com/snakemake/snakemake-wrappers/commit/a9bd6dfdeee5692c76507148e12e81547c0c0906))
+* autobump bio/gatk3/printreads ([#3129](https://www.github.com/snakemake/snakemake-wrappers/issues/3129)) ([97b2c9d](https://www.github.com/snakemake/snakemake-wrappers/commit/97b2c9d218b120cda5991303f7b1b3d5b854bf2f))
+* autobump bio/last/lastal ([#3131](https://www.github.com/snakemake/snakemake-wrappers/issues/3131)) ([2c13329](https://www.github.com/snakemake/snakemake-wrappers/commit/2c1332948b3082438fd2021087592b47a48c8a5c))
+* autobump bio/last/lastdb ([#3130](https://www.github.com/snakemake/snakemake-wrappers/issues/3130)) ([ce9dfd4](https://www.github.com/snakemake/snakemake-wrappers/commit/ce9dfd459862a86fa0cb960708e232d21894bd60))
+* autobump bio/multiqc ([#3132](https://www.github.com/snakemake/snakemake-wrappers/issues/3132)) ([b5bb552](https://www.github.com/snakemake/snakemake-wrappers/commit/b5bb55238100f1f4c520d173323ce4c84e035cbb))
+* autobump bio/reference/ensembl-mysql-table ([#3133](https://www.github.com/snakemake/snakemake-wrappers/issues/3133)) ([065d45e](https://www.github.com/snakemake/snakemake-wrappers/commit/065d45eba68db3375213095ecf2332705b333cf0))
+
+### [4.1.1](https://www.github.com/snakemake/snakemake-wrappers/compare/v4.1.0...v4.1.1) (2024-08-21)
+
+
+### Bug Fixes
+
+* Fix datavzrd wrapper ([#3125](https://www.github.com/snakemake/snakemake-wrappers/issues/3125)) ([5bd032c](https://www.github.com/snakemake/snakemake-wrappers/commit/5bd032cfa2a24eaa66cb7e24f5b3439fae939886))
+
+## [4.1.0](https://www.github.com/snakemake/snakemake-wrappers/compare/v4.0.0...v4.1.0) (2024-08-21)
+
+
+### Features
+
+* Allow outputting of rendered yte config in Datavzrd wrapper ([#3123](https://www.github.com/snakemake/snakemake-wrappers/issues/3123)) ([e74be78](https://www.github.com/snakemake/snakemake-wrappers/commit/e74be7843299478a276febfacb52825a9762500c))
+
+
+### Bug Fixes
+
+* Correctly handle non str index list for bwa-mem2/mem ([#3101](https://www.github.com/snakemake/snakemake-wrappers/issues/3101)) ([6f46508](https://www.github.com/snakemake/snakemake-wrappers/commit/6f46508aa99663930e70c82114205929aee2dfcb))
+
+
+### Performance Improvements
+
+* autobump bio/gatk3/baserecalibrator ([#3119](https://www.github.com/snakemake/snakemake-wrappers/issues/3119)) ([6c2bdfd](https://www.github.com/snakemake/snakemake-wrappers/commit/6c2bdfdca79c7037448bc601a4aeb3d578ea0980))
+* autobump bio/gatk3/realignertargetcreator ([#3118](https://www.github.com/snakemake/snakemake-wrappers/issues/3118)) ([ba219e7](https://www.github.com/snakemake/snakemake-wrappers/commit/ba219e7698eb078fe22c703a9662c8cb6deee0eb))
+* autobump bio/genomescope ([#3117](https://www.github.com/snakemake/snakemake-wrappers/issues/3117)) ([6292229](https://www.github.com/snakemake/snakemake-wrappers/commit/62922298404397c7b23dc5b8fb01bc33e445e97f))
+* autobump bio/igv-reports ([#3120](https://www.github.com/snakemake/snakemake-wrappers/issues/3120)) ([fe33c2c](https://www.github.com/snakemake/snakemake-wrappers/commit/fe33c2c27328212c528e94f995fd0bc26d7fde39))
+* autobump bio/trinity ([#3121](https://www.github.com/snakemake/snakemake-wrappers/issues/3121)) ([62b0231](https://www.github.com/snakemake/snakemake-wrappers/commit/62b0231c99920200e3fa6794f87578869cc35bd5))
+* Update Datavzrd wrapper ([#3122](https://www.github.com/snakemake/snakemake-wrappers/issues/3122)) ([5101461](https://www.github.com/snakemake/snakemake-wrappers/commit/51014613939bfc5e48e0b2ae619e283cf36bfd88))
+
 ## [4.0.0](https://www.github.com/snakemake/snakemake-wrappers/compare/v3.14.2...v4.0.0) (2024-08-14)
 
 
