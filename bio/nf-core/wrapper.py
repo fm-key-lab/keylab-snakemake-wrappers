@@ -12,8 +12,9 @@ config = snakemake.params.get("config")
 resume = snakemake.params.get("resume", True) # TODO: Reasonable default? Conforms nxf to smk...
 # process_cache = snakemake.params.get("process_cache", 'lenient') # TODO: Reasonable default? Conforms nxf to smk...
 process_cache = snakemake.params.get("process_cache") # TODO: Reasonable default? Conforms nxf to smk...
-nxf = snakemake.params.get("nxf", "") # For -log, -w, etc.
+nxf = snakemake.params.get("nxf", "") # For nextflow parameters etc.
 extra = snakemake.params.get("extra", "")
+
 if isinstance(profile, str):
     profile = [profile]
 if isinstance(config, str):
@@ -56,4 +57,8 @@ log = snakemake.log_fmt_shell(stdout=False, stderr=True)
 args = " ".join(args)
 pipeline = snakemake.params.pipeline
 
-shell("nextflow run nf-core/{pipeline} {nxf} {args} {extra} {log}")
+nxf_log = snakemake.params.get("nxf_log")
+if nxf_log:
+    nxf_log = f"-log {nxf_log}"
+
+shell("nextflow {nxf_log} run nf-core/{pipeline} {nxf} {args} {extra} {log}")
